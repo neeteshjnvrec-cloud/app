@@ -20,7 +20,7 @@ const iconMap = {
   'stethoscope': Stethoscope,
   'activity': Activity,
   'band-aid': Bandage,
-  'shield-heart': ShieldHeart,
+  'shield-heart': Heart,
   'sparkles': Sparkles
 };
 

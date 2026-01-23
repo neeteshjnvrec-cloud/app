@@ -4,9 +4,9 @@ import {
   Heart, Target, TrendingUp, Globe
 } from 'lucide-react';
 import { aboutData, brandName } from '../mockData';
-import { Card, CardContent } from './ui/card';
-import { Button } from './ui/button';
-import LeadCaptureModal from './LeadCaptureModal';
+import { Card, CardContent } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import LeadCaptureModal from '../components/LeadCaptureModal';
 
 const iconMap = {
   'users': Users,

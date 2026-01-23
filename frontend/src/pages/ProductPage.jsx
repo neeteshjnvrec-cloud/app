@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { 
   Flag, ShieldCheck, Zap, Award, 
   HeartPulse, Stethoscope, Activity, 
-  Bandage, ShieldHeart, Sparkles,
+  Bandage, Heart, Sparkles,
   Download, PlayCircle, CheckCircle, XCircle
 } from 'lucide-react';
 import { productData, brandName } from '../mockData';
-import { Button } from './ui/button';
-import { Card, CardContent } from './ui/card';
-import LeadCaptureModal from './LeadCaptureModal';
-import AgenciesSection from './AgenciesSection';
+import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
+import LeadCaptureModal from '../components/LeadCaptureModal';
+import AgenciesSection from '../components/AgenciesSection';
 
 const iconMap = {
   'flag': Flag,

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Facebook, Twitter, Youtube, Instagram, MapPin, Mail, Phone } from 'lucide-react';
-import { footerData } from '../mockData';
+import { Facebook, Twitter, Linkedin, Instagram, MapPin, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { footerData, brandName } from '../mockData';
 
 const iconMap = {
   'facebook': Facebook,
   'twitter': Twitter,
-  'youtube': Youtube,
+  'linkedin': Linkedin,
   'instagram': Instagram
 };
 
@@ -17,8 +18,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="md:col-span-2">
             <div className="text-3xl font-bold mb-4">
-              <span className="text-white">No</span>
-              <span className="text-[#4CAF50]">Wound</span>
+              <span className="text-white">{brandName}</span>
               <span className="text-xs align-super">™</span>
             </div>
             <p className="text-gray-200 leading-relaxed mb-6">
@@ -32,9 +32,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerData.links.map((link, index) => (
                 <li key={index}>
-                  <a href={link.path} className="text-gray-200 hover:text-[#4CAF50] transition-colors">
+                  <Link to={link.path} className="text-gray-200 hover:text-[#4CAF50] transition-colors">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -46,7 +46,7 @@ const Footer = () => {
             <div className="space-y-4">
               <a href={`mailto:${footerData.contact.email}`} className="flex items-start gap-3 text-gray-200 hover:text-[#4CAF50] transition-colors">
                 <Mail size={20} className="mt-1 flex-shrink-0" />
-                <span>{footerData.contact.email}</span>
+                <span className="break-all">{footerData.contact.email}</span>
               </a>
               <a href={`tel:${footerData.contact.phone}`} className="flex items-start gap-3 text-gray-200 hover:text-[#4CAF50] transition-colors">
                 <Phone size={20} className="mt-1 flex-shrink-0" />
@@ -82,7 +82,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center text-gray-300 text-sm">
-            <p className="mb-2">Copyright © 2024 NoWound - We create innovative products and technologies that drive the advancement in wound management</p>
+            <p className="mb-2">Copyright © 2024 {brandName} - We create innovative products and technologies that drive the advancement in wound management</p>
             <div className="flex justify-center gap-6">
               <a href="#privacy" className="hover:text-[#4CAF50] transition-colors">Privacy Policy</a>
               <span>|</span>
@@ -107,7 +107,7 @@ const Footer = () => {
         className="fixed bottom-28 right-8 bg-[#2B5F8D] text-white px-6 py-4 rounded-full shadow-2xl hover:bg-[#1e4a6b] transition-all duration-300 z-50 flex items-center gap-2 font-semibold"
       >
         <Phone size={20} />
-        <div className="flex flex-col items-start">
+        <div className="hidden md:flex flex-col items-start">
           <span className="text-xs">24/7 Helpline</span>
           <span className="text-sm">{footerData.contact.phone}</span>
         </div>

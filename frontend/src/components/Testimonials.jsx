@@ -28,7 +28,8 @@ const Testimonials = () => {
                   </div>
                   <div>
                     <p className="font-bold text-[#2B5F8D]">{testimonial.name}</p>
-                    <div className="flex text-[#FFC107]">
+                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <div className="flex text-[#FFC107] text-sm">
                       {[...Array(5)].map((_, i) => (
                         <span key={i}>★</span>
                       ))}

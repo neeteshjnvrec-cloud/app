@@ -28,7 +28,7 @@ const AgenciesSection = () => {
         <div className="relative overflow-hidden">
           <div className="flex animate-scroll gap-12 items-center justify-center flex-wrap">
             {[...agencies, ...agencies].map((agency, index) => {
-              const Icon = iconMap[agency.logo];
+              const Icon = iconMap[agency.icon];
               return (
                 <div
                   key={index}

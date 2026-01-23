@@ -12,9 +12,9 @@ export const heroData = {
 };
 
 export const contactInfo = {
-  helpline: "+1 (888) 555-0123",
+  helpline: "+918476828634",
   email: "care@injuryfreeliving.com",
-  address: "3rd floor, Medical Innovation Center, Healthcare District, City, State 12345"
+  address: "shri chhote lal inter college Itahri, Kayatha, Uttar Pradesh 283207, India"
 };
 
 export const productData = {

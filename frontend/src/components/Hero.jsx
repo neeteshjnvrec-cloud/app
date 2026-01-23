@@ -1,5 +1,5 @@
 import React from 'react';
-import { heroData } from '../mockData';
+import { heroData, brandName } from '../mockData';
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
           <div className="bg-[#2B5F8D] text-white py-20 px-12 relative z-10">
             <div className="max-w-xl">
               <h2 className="text-xl font-light mb-2 tracking-wider">{heroData.title}</h2>
-              <h1 className="text-6xl font-bold mb-8 leading-tight">{heroData.subtitle}</h1>
+              <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">{heroData.subtitle}</h1>
               <p className="text-lg mb-6 leading-relaxed">
                 {heroData.description}{' '}
                 <span className="font-bold">{heroData.highlights[0]}</span>,{' '}

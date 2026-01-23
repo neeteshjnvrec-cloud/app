@@ -4,7 +4,7 @@ import {
   Phone, RefreshCw, Users, Video,
   Monitor, Car, CheckSquare 
 } from 'lucide-react';
-import { technologyFeatures } from '../mockData';
+import { technologyFeatures, brandName } from '../mockData';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from './ui/tabs';
 
 const iconMap = {
@@ -33,8 +33,7 @@ const TechnologySection = () => {
             {technologyFeatures.title}
           </h2>
           <h3 className="text-5xl font-bold">
-            <span className="italic">No</span>
-            <span className="text-[#4CAF50] italic">{technologyFeatures.subtitle}</span>
+            <span className="italic">{technologyFeatures.subtitle}</span>
             <span className="text-sm align-super">™</span>
           </h3>
         </div>

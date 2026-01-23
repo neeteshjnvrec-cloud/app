@@ -90,7 +90,7 @@ export const productData = {
     "Untreated coagulopathy"
   ],
   badges: [
-    { title: "Made in USA", icon: "flag" },
+    { title: "Made in India", icon: "flag" },
     { title: "FDA Approved", icon: "shield-check" },
     { title: "Electrical Safety", icon: "zap" },
     { title: "Patent Protected Design", icon: "award" }

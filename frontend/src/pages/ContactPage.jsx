@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import { contactInfo, brandName } from '../mockData';
+
+// Fix for default markers in react-leaflet
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+});
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { toast } from '../hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -30,14 +42,36 @@ const ContactPage = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Contact form submitted:', formData);
+    try {
+      // Send email using EmailJS
+      const emailParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        organization: formData.organization,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'kumarneetesh96@gmail.com'
+      };
+
+      // EmailJS configuration - Replace with your actual service details
+      await emailjs.send(
+        'service_8ahmo6u', // Replace with your EmailJS service ID
+        'template_lle5w4q', // Replace with your EmailJS template ID
+        emailParams,
+        'CP4os0ioukURB02S6' // Replace with your EmailJS public key
+      );
+
+      // Send WhatsApp message
+      const whatsappMessage = `New Contact Inquiry:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nOrganization: ${formData.organization}\nSubject: ${formData.subject}\nMessage: ${formData.message}`;
+      const whatsappUrl = `https://wa.me/918476828634?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, '_blank');
+
       toast({
         title: "Message Sent Successfully!",
-        description: "We'll get back to you within 24 hours.",
+        description: "Check WhatsApp for confirmation. Email sent to our team.",
       });
-      setIsSubmitting(false);
+
       setFormData({
         name: '',
         email: '',
@@ -46,7 +80,16 @@ const ContactPage = () => {
         subject: '',
         message: ''
       });
-    }, 1000);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -292,12 +335,25 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
-      <section className="h-96 bg-gray-200">
-        <div className="w-full h-full flex items-center justify-center text-gray-500">
-          <MapPin size={48} className="mr-3" />
-          <span className="text-xl">Interactive Map Location</span>
-        </div>
+      {/* Interactive Map Section */}
+      <section className="h-96 bg-gray-100">
+        <MapContainer center={[27.1997, 79.2997]} zoom={15} className="w-full h-full">
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
+          <Marker position={[27.1997, 79.2997]}>
+            <Popup>
+              <div className="text-center">
+                <strong>{brandName}</strong><br />
+                {contactInfo.address}<br />
+                <a href={`tel:${contactInfo.helpline}`} className="text-blue-600 hover:underline">
+                  {contactInfo.helpline}
+                </a>
+              </div>
+            </Popup>
+          </Marker>
+        </MapContainer>
       </section>
     </div>
   );

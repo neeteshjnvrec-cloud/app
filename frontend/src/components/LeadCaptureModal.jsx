@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from '../hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const LeadCaptureModal = ({ isOpen, onClose, title = "Get Your Free Demo" }) => {
   const [formData, setFormData] = useState({
@@ -27,14 +28,35 @@ const LeadCaptureModal = ({ isOpen, onClose, title = "Get Your Free Demo" }) => 
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Lead captured:', formData);
+    try {
+      // Send email using EmailJS
+      const emailParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        organization: formData.organization,
+        message: formData.message,
+        to_email: 'kumarneetesh96@gmail.com' // Corrected email
+      };
+
+      // EmailJS configuration - Replace with your actual service details
+      await emailjs.send(
+        'service_8ahmo6u', // Replace with your EmailJS service ID
+        'service_8ahmo6u', // Replace with your EmailJS template ID
+        emailParams,
+        'template_lle5w4q' // Replace with your EmailJS public key
+      );
+
+      // Send WhatsApp message
+      const whatsappMessage = `New Demo Request:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nOrganization: ${formData.organization}\nMessage: ${formData.message}`;
+      const whatsappUrl = `https://wa.me/918476828634?text=${encodeURIComponent(whatsappMessage)}`;
+      window.open(whatsappUrl, '_blank');
+
       toast({
         title: "Request Submitted Successfully!",
-        description: "Our team will contact you within 24 hours.",
+        description: "Check WhatsApp for confirmation. Email sent to our team.",
       });
-      setIsSubmitting(false);
+
       setFormData({
         name: '',
         email: '',
@@ -43,7 +65,16 @@ const LeadCaptureModal = ({ isOpen, onClose, title = "Get Your Free Demo" }) => 
         message: ''
       });
       onClose();
-    }, 1000);
+    } catch (error) {
+      console.error('Error sending request:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send request. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;

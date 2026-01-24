@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Flag, ShieldCheck, Zap, Award, 
   HeartPulse, Stethoscope, Activity, 
@@ -8,6 +8,7 @@ import {
 import { productData, brandName } from '../mockData';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
 import LeadCaptureModal from '../components/LeadCaptureModal';
 import AgenciesSection from '../components/AgenciesSection';
 
@@ -26,6 +27,20 @@ const iconMap = {
 
 const ProductPage = () => {
   const [showLeadModal, setShowLeadModal] = useState(false);
+  const [showVideoModal, setShowVideoModal] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const healingImages = ['/heal1.png', '/heal2.png'];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        (prevIndex + 1) % healingImages.length
+      );
+    }, 1000); // Change image every 1 second
+
+    return () => clearInterval(interval);
+  }, [healingImages.length]);
 
   return (
     <div className="min-h-screen">
@@ -74,18 +89,34 @@ const ProductPage = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-[#2B5F8D] mb-4">Accelerate Wound Healing</h2>
           <p className="text-center text-gray-600 mb-12 text-lg">Understanding how {brandName} NPWT works</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {productData.healingMechanisms.map((mechanism, index) => (
-              <Card key={index} className="bg-white hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-[#2B5F8D] rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white font-bold text-2xl">{index + 1}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-[#2B5F8D] mb-3">{mechanism.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{mechanism.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          
+          {/* Two Column Layout */}
+          <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto items-stretch">
+            {/* Left Side - Image Slideshow */}
+            <div className="flex justify-center items-center">
+              <div className="relative w-85 h-96 overflow-hidden rounded-lg shadow-lg">
+                <img 
+                  src={healingImages[currentImageIndex]} 
+                  alt="Wound Healing Process" 
+                  className="w-full h-full object-cover transition-all duration-500 ease-in-out" 
+                />
+              </div>
+            </div>
+            
+            {/* Right Side - Healing Points in 2x2 Grid */}
+            <div className="grid grid-cols-2 gap-6 h-92">
+              {productData.healingMechanisms.map((mechanism, index) => (
+                <Card key={index} className="bg-white hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+                  <CardContent className="p-6 text-center h-full flex flex-col justify-center">
+                    <div className="w-12 h-12 bg-[#2B5F8D] rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-white font-bold text-lg">{index + 1}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-[#2B5F8D] mb-2">{mechanism.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed flex-grow">{mechanism.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -151,6 +182,17 @@ const ProductPage = () => {
         </div>
       </section>
 
+      {/* Product Image */}
+      <section className="bg-gray-50">
+        <div className="container mx-auto text-center">
+          <img 
+            src="/product-image.png" 
+            alt="Product Image" 
+            className="max-w-full h-auto rounded-lg shadow-lg mx-auto" 
+          />
+        </div>
+      </section>
+
       {/* Downloads */}
       <section className="py-20 bg-gradient-to-br from-[#2B5F8D] to-[#1e4a6b] text-white">
         <div className="container mx-auto px-4 text-center">
@@ -171,7 +213,10 @@ const ProductPage = () => {
                 <p className="text-sm text-blue-100">Complete operation guide</p>
               </CardContent>
             </Card>
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all cursor-pointer transform hover:scale-105">
+            <Card 
+              className="bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all cursor-pointer transform hover:scale-105"
+              onClick={() => setShowVideoModal(true)}
+            >
               <CardContent className="p-8 text-center">
                 <PlayCircle size={48} className="mx-auto mb-4 text-[#4CAF50]" />
                 <h3 className="text-xl font-bold mb-2">Product Video</h3>
@@ -199,6 +244,27 @@ const ProductPage = () => {
       </section>
 
       <AgenciesSection />
+
+      <Dialog open={showVideoModal} onOpenChange={setShowVideoModal}>
+        <DialogContent className="max-w-4xl">
+          <DialogHeader>
+            <DialogTitle>Product Video</DialogTitle>
+          </DialogHeader>
+          <div className="aspect-video">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/9Or-qaEkZZU?si=xxvwTvliA2xzX-Uq"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="rounded-lg"
+            ></iframe>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <LeadCaptureModal 
         isOpen={showLeadModal} 

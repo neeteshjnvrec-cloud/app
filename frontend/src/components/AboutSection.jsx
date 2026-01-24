@@ -15,7 +15,8 @@ const AboutSection = () => {
             {/* Left Image */}
             <div className="order-2 md:order-1">
               <img
-                src="https://images.pexels.com/photos/5215017/pexels-photo-5215017.jpeg?w=600&q=80"
+                // src="https://images.pexels.com/photos/5215017/pexels-photo-5215017.jpeg?w=600&q=80"
+                src="/mainpage1.jpg?w=600&q=80"
                 alt="About Us"
                 className="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
               />

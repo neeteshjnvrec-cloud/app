@@ -12,7 +12,7 @@ export const heroData = {
 };
 
 export const contactInfo = {
-  helpline: "+918476828634",
+  helpline: "+918130444101",
   email: "care@injuryfreeliving.com",
   address: "shri chhote lal inter college Itahri, Kayatha, Uttar Pradesh 283207, India"
 };

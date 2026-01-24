@@ -49,7 +49,7 @@ const LeadCaptureModal = ({ isOpen, onClose, title = "Get Your Free Demo" }) => 
 
       // Send WhatsApp message
       const whatsappMessage = `New Demo Request:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nOrganization: ${formData.organization}\nMessage: ${formData.message}`;
-      const whatsappUrl = `https://wa.me/918476828634?text=${encodeURIComponent(whatsappMessage)}`;
+      const whatsappUrl = `https://wa.me/918130444101?text=${encodeURIComponent(whatsappMessage)}`;
       window.open(whatsappUrl, '_blank');
 
       toast({

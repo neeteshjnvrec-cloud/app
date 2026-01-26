@@ -1,7 +1,9 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "private": true,  "homepage": "https://neeteshjnvrec-cloud.github.io/app/",  "dependencies": {
+  "private": true,
+  "homepage": "https://neeteshjnvrec-cloud.github.io/app/",
+  "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.8",

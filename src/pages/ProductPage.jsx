@@ -8,6 +8,7 @@ import {
 import { productData, brandName } from '../mockData';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
+import productImage from '../assets/images/product-image.png';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
 import LeadCaptureModal from '../components/LeadCaptureModal';
 import AgenciesSection from '../components/AgenciesSection';
@@ -186,7 +187,7 @@ const ProductPage = () => {
       <section className="bg-gray-50">
         <div className="container mx-auto text-center">
           <img 
-            src={`${process.env.PUBLIC_URL}/product-image.png`} 
+            src={productImage} 
             alt="Product Image" 
             className="max-w-full h-auto rounded-lg shadow-lg mx-auto" 
           />

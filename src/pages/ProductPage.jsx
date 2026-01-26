@@ -186,7 +186,7 @@ const ProductPage = () => {
       <section className="bg-gray-50">
         <div className="container mx-auto text-center">
           <img 
-            src="/product-image.png" 
+            src={`${process.env.PUBLIC_URL}/product-image.png`} 
             alt="Product Image" 
             className="max-w-full h-auto rounded-lg shadow-lg mx-auto" 
           />

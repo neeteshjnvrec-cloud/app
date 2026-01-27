@@ -1,17 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.444fd530.css",
-    "main.js": "/static/js/main.97b6ab47.js",
-    "static/media/heal2.png": "/static/media/heal2.29aeaab79a24b84fd9e1.png",
+    "main.js": "/static/js/main.b405afe4.js",
     "static/media/product-image.png": "/static/media/product-image.a263c8c234068cc2c96a.png",
-    "static/media/heal1.png": "/static/media/heal1.093e84bf164653e24926.png",
     "static/media/mainpage1.jpg": "/static/media/mainpage1.97fb0832073b70fcc48d.jpg",
     "index.html": "/index.html",
     "main.444fd530.css.map": "/static/css/main.444fd530.css.map",
-    "main.97b6ab47.js.map": "/static/js/main.97b6ab47.js.map"
+    "main.b405afe4.js.map": "/static/js/main.b405afe4.js.map"
   },
   "entrypoints": [
     "static/css/main.444fd530.css",
-    "static/js/main.97b6ab47.js"
+    "static/js/main.b405afe4.js"
   ]
 }

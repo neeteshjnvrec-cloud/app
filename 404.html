@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+    <script>
+        // Redirect all 404s to the home page with the path in the URL
+        var pathSegments = window.location.pathname.split('/').filter(function(el) { return el.length > 0; });
+        if (pathSegments.length > 0 && pathSegments[0] !== 'index.html') {
+            var path = '/' + pathSegments.join('/');
+            window.location.replace('/?redirect=' + encodeURIComponent(path));
+        }
+    </script>
+</head>
+<body>
+    Redirecting...
+</body>
+</html>

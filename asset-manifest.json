@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.444fd530.css",
-    "main.js": "/static/js/main.b405afe4.js",
-    "static/media/product-image.png": "/static/media/product-image.a263c8c234068cc2c96a.png",
-    "static/media/mainpage1.jpg": "/static/media/mainpage1.97fb0832073b70fcc48d.jpg",
-    "index.html": "/index.html",
-    "main.444fd530.css.map": "/static/css/main.444fd530.css.map",
-    "main.b405afe4.js.map": "/static/js/main.b405afe4.js.map"
+    "main.css": "https://injuryfreeliving.com/static/css/main.444fd530.css",
+    "main.js": "https://injuryfreeliving.com/static/js/main.ffdb8a22.js",
+    "static/media/product-image.png": "https://injuryfreeliving.com/static/media/product-image.a263c8c234068cc2c96a.png",
+    "static/media/mainpage1.jpg": "https://injuryfreeliving.com/static/media/mainpage1.97fb0832073b70fcc48d.jpg",
+    "index.html": "https://injuryfreeliving.com/index.html",
+    "main.444fd530.css.map": "https://injuryfreeliving.com/static/css/main.444fd530.css.map",
+    "main.ffdb8a22.js.map": "https://injuryfreeliving.com/static/js/main.ffdb8a22.js.map"
   },
   "entrypoints": [
     "static/css/main.444fd530.css",
-    "static/js/main.b405afe4.js"
+    "static/js/main.ffdb8a22.js"
   ]
 }

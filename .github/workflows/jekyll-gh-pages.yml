@@ -40,4 +40,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           cname: injuryfreeliving.com
-        uses: actions/deploy-pages@v4

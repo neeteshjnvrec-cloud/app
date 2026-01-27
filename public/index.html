@@ -4,24 +4,28 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <meta name="description" content="Injury Free Living - Advanced Wound Care Solutions" />
-        <!--
-        manifest.json provides metadata used when your web app is installed on a
-        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-        -->
-        <!--
-        Notice the use of %PUBLIC_URL% in the tags above.
-        It will be replaced with the URL of the `public` folder during the build.
-        Only files inside the `public` folder can be referenced from the HTML.
+        
+        <title>Injury Free Living | Advanced NPWT & Wound Care Solutions</title>
+        <meta name="description" content="Injury Free Living provides professional-grade Negative Pressure Wound Therapy (NPWT) and advanced wound care solutions to accelerate healing and recovery." />
+        <meta name="keywords" content="NPWT, Wound Care, Injury Free Living, Medical Solutions, Advanced Healing, Negative Pressure Therapy, Wound Recovery" />
+        <meta name="author" content="Injury Free Living" />
 
-        Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-        work correctly both with client-side routing and a non-root public URL.
-        Learn how to configure a non-root public URL by running `npm run build`.
-        -->
-        <title>Injury Free Living - Advanced NPWT Solutions</title>
-        <!--
-        These two scripts have been added for the Visual Edits, please do not edit or remove them
-        -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://injuryfreeliving.com/" />
+        <meta property="og:title" content="Injury Free Living | Advanced NPWT Solutions" />
+        <meta property="og:description" content="Professional-grade wound care and NPWT solutions for faster recovery." />
+        <meta property="og:image" content="https://injuryfreeliving.com/logo-preview.jpg" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://injuryfreeliving.com/" />
+        <meta property="twitter:title" content="Injury Free Living | NPWT Solutions" />
+        <meta property="twitter:description" content="Advanced medical solutions for injury-free living and wound care." />
+
+        <link rel="canonical" href="https://injuryfreeliving.com/" />
+
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+        <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
         <script>
             // Only load visual edit scripts when inside an iframe
             if (window.self !== window.top) {
@@ -45,17 +49,9 @@
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
+        
         <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
         <a
             id="emergent-badge"
             target="_blank"
@@ -80,12 +76,11 @@
                 border: 1px solid rgba(255, 255, 255, 0.25) !important;
             "
         >
-            <div
-                style="display: flex; flex-direction: row; align-items: center"
-            >
+            <div style="display: flex; flex-direction: row; align-items: center">
                 <img
                     style="width: 20px; height: 20px; margin-right: 8px"
                     src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
+                    alt="Logo"
                 />
                 <p
                     style="
@@ -103,6 +98,7 @@
                 </p>
             </div>
         </a>
+
         <script>
             !(function (t, e) {
                 var o, n, p, r;
@@ -167,7 +163,7 @@
             })(document, window.posthog || []);
             posthog.init("phc_xAvL2Iq4tFmANRE7kzbKwaSqp1HJjN7x48s3vr0CMjs", {
                 api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well,
+                person_profiles: "identified_only",
                 session_recording: {
                     recordCrossOriginIframes: true,
                 },

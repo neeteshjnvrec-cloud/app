@@ -190,7 +190,7 @@ const ContactPage = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+91 12345 67890"
                           required
                           className="border-gray-300 focus:border-[#2B5F8D] focus:ring-[#2B5F8D]"
                         />

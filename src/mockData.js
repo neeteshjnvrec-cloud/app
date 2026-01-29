@@ -5,7 +5,7 @@ export const brandTagline = "Smart Healing Solutions";
 
 export const heroData = {
   title: "WE ARE",
-  subtitle: "INJURYFREELIVING",
+  subtitle: "INJURY FREE LIVING",
   description: "We create innovative products and technologies that drive advancements in",
   highlights: ["Wound Care", "Wound Closure", "Tissue Regeneration", "Scar Management"],
   image: "https://images.unsplash.com/photo-1758691461935-202e2ef6b69f?w=1200&q=80"

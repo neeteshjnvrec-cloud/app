@@ -41,10 +41,10 @@ const LeadCaptureModal = ({ isOpen, onClose, title = "Get Your Free Demo" }) => 
 
       // EmailJS configuration - Replace with your actual service details
       await emailjs.send(
-        'service_8ahmo6u', // Replace with your EmailJS service ID
-        'service_8ahmo6u', // Replace with your EmailJS template ID
+       'service_8ahmo6u', // Replace with your EmailJS service ID
+        'template_lle5w4q', // Replace with your EmailJS template ID
         emailParams,
-        'template_lle5w4q' // Replace with your EmailJS public key
+        'CP4os0ioukURB02S6' // Replace with your EmailJS public key
       );
 
       // Send WhatsApp message

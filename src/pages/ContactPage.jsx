@@ -314,6 +314,14 @@ const ContactPage = () => {
                     >
                       <Instagram size={24} className="text-white" />
                     </a>
+                    <a
+                      href="#"
+                      className="w-12 h-12 bg-[#2B5F8D] hover:bg-[#4CAF50] rounded-full flex items-center justify-center transition-all transform hover:scale-110"
+                      aria-label="YouTube"
+                    >
+                      <Youtube size={24} className="text-white" />
+                    </a>
+                    
                   </div>
                 </CardContent>
               </Card>

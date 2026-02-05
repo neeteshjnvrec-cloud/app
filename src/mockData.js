@@ -336,9 +336,10 @@ export const footerData = {
     { label: "Contact", path: "/contact" }
   ],
   social: [
-    { platform: "Facebook", icon: "facebook", url: "#" },
+    { platform: "Facebook", icon: "facebook", url: "https://www.facebook.com/profile.php?id=61587148810352" },
     { platform: "Twitter", icon: "twitter", url: "#" },
-    { platform: "LinkedIn", icon: "linkedin", url: "#" },
-    { platform: "Instagram", icon: "instagram", url: "#" }
+    { platform: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/company/injuryfreeliving" },
+    { platform: "Instagram", icon: "instagram", url: "https://www.instagram.com/injuryfreeliving/" },
+    { platform: "YouTube", icon: "youtube", url: "https://www.youtube.com/@InjuryFreeLiving" }
   ]
 };

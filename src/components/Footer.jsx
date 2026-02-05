@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Instagram, MapPin, Mail, Phone } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, MapPin, Mail, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { footerData, brandName } from '../mockData';
 
@@ -7,7 +7,9 @@ const iconMap = {
   'facebook': Facebook,
   'twitter': Twitter,
   'linkedin': Linkedin,
-  'instagram': Instagram
+  'instagram': Instagram,
+  'youtube': Youtube
+  
 };
 
 const Footer = () => {
@@ -82,11 +84,11 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center text-gray-300 text-sm">
-            <p className="mb-2">Copyright © 2024 {brandName} - We create innovative products and technologies that drive the advancement in wound management</p>
+            <p className="mb-2">Copyright © {new Date().getFullYear()} {brandName} - We create innovative products and technologies that drive the advancement in wound management</p>
             <div className="flex justify-center gap-6">
-              <a href="#privacy" className="hover:text-[#4CAF50] transition-colors">Privacy Policy</a>
+              <a href="/privacy-policy" className="hover:text-[#4CAF50] transition-colors">Privacy Policy</a>
               <span>|</span>
-              <a href="#terms" className="hover:text-[#4CAF50] transition-colors">Terms & Services</a>
+              <a href="/terms-conditions" className="hover:text-[#4CAF50] transition-colors">Terms & Services</a>
             </div>
           </div>
         </div>

@@ -82,9 +82,16 @@ const ResourcesPage = () => {
                       </div>
                       <h3 className="text-xl font-bold text-[#2B5F8D] mb-3">{article.title}</h3>
                       <p className="text-sm text-gray-600 mb-4">{article.source}</p>
+                      <a 
+                        href={article.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-full"
+                      >
                       <Button className="w-full bg-[#4CAF50] hover:bg-[#45a049] text-white rounded-full">
                         Read Article <ExternalLink size={16} className="ml-2" />
                       </Button>
+                      </a>
                     </CardContent>
                   </Card>
                 ))}
@@ -134,9 +141,16 @@ const ResourcesPage = () => {
                     <CardContent className="p-8">
                       <h3 className="text-2xl font-bold text-[#2B5F8D] mb-4">{study.title}</h3>
                       <p className="text-gray-600 leading-relaxed mb-6">{study.description}</p>
-                      <Button className="w-full bg-[#4CAF50] hover:bg-[#45a049] text-white rounded-full">
-                        Read Full Study <ExternalLink size={16} className="ml-2" />
-                      </Button>
+                      <a 
+                        href={study.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-full"
+                      >
+                        <Button className="w-full bg-[#4CAF50] hover:bg-[#45a049] text-white rounded-full">
+                          Read Full Study <ExternalLink size={16} className="ml-2" />
+                        </Button>
+                      </a>
                     </CardContent>
                   </Card>
                 ))}

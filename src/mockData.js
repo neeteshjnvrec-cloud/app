@@ -260,22 +260,25 @@ export const aboutData = {
 export const resourcesData = {
   news: [
     {
-      title: "Revolutionary Wound Care Technology Shows Promising Results",
-      date: "March 15, 2024",
+      title: "Cell-engineered technologies for wound healing and tissue regeneration",
+      date: "October 24, 2025",
       source: "Medical Innovation Journal",
-      image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&q=80"
+      image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&q=80",
+      link: "https://www.nature.com/articles/s44385-025-00042-w"
     },
     {
       title: "Clinical Study Confirms Faster Healing Times with Advanced NPWT",
-      date: "February 28, 2024",
+      date: "February 28, 2025",
       source: "Healthcare Research Review",
-      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=400&q=80"
+      image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=400&q=80",
+      link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6852528/"
     },
     {
       title: "Innovation in Wound Management: A Game Changer for Patients",
-      date: "January 10, 2024",
+      date: "January 10, 2025",
       source: "Medical Technology News",
-      image: "https://images.pexels.com/photos/3845129/pexels-photo-3845129.jpeg?w=400&q=80"
+      image: "https://images.pexels.com/photos/3845129/pexels-photo-3845129.jpeg?w=400&q=80",
+      link: "https://www.biospectrumasia.com/opinion/30/14648/innovations-in-wound-care-to-improve-patient-outcomes-.html"
     }
   ],
   downloads: [
@@ -302,12 +305,14 @@ export const resourcesData = {
     {
       title: "Clinical Outcomes of NPWT in Wound Healing",
       description: "Study highlights effectiveness of NPWT in improving healing scores across various wound types",
-      image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80"
+      image: "https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80",
+      link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10088847/"
     },
     {
       title: "Management of Post-Traumatic Wounds Using NPWT",
       description: "Clinical evidence demonstrating significant improvements in post-traumatic wound management",
-      image: "https://images.pexels.com/photos/5215017/pexels-photo-5215017.jpeg?w=600&q=80"
+      image: "https://images.pexels.com/photos/5215017/pexels-photo-5215017.jpeg?w=600&q=80",
+      link: "http://www.casereports.in/articles/12/1/Management-of-Post-Traumatic-Wounds-using-Indigenously-Developed-Negative-Pressure-Wound-Therapy-Device.html"
     }
   ]
 };

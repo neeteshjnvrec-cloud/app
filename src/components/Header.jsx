@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Phone, Mail, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { contactInfo, brandName, brandTagline } from '../mockData';
@@ -8,9 +8,29 @@ import LeadCaptureModal from './LeadCaptureModal';
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showLeadModal, setShowLeadModal] = useState(false);
+  const [hasAutoTriggered, setHasAutoTriggered] = useState(false); // Prevents annoying repetitive popups
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
+
+  // Mouse tracking logic for Corner Trigger
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      // Trigger if:
+      // 1. Mouse is in the top 100 pixels (near browser tabs/header)
+      // 2. Mouse is in the right 20% of the screen width
+      // 3. Modal hasn't already auto-opened in this session
+      const isTopRight = e.clientX > (window.innerWidth * 0.8) && e.clientY < 100;
+
+      if (isTopRight && !hasAutoTriggered) {
+        setShowLeadModal(true);
+        setHasAutoTriggered(true);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, [hasAutoTriggered]);
 
   return (
     <>

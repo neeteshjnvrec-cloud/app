@@ -287,7 +287,7 @@ const ContactPage = () => {
                   <h3 className="text-xl font-bold text-[#2B5F8D] mb-6">Connect With Us</h3>
                   <div className="flex gap-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/profile.php?id=61587148810352"
                       className="w-12 h-12 bg-[#2B5F8D] hover:bg-[#4CAF50] rounded-full flex items-center justify-center transition-all transform hover:scale-110"
                       aria-label="Facebook"
                     >
@@ -301,21 +301,21 @@ const ContactPage = () => {
                       <Twitter size={24} className="text-white" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.linkedin.com/company/injuryfreeliving"
                       className="w-12 h-12 bg-[#2B5F8D] hover:bg-[#4CAF50] rounded-full flex items-center justify-center transition-all transform hover:scale-110"
                       aria-label="LinkedIn"
                     >
                       <Linkedin size={24} className="text-white" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/injuryfreeliving/"
                       className="w-12 h-12 bg-[#2B5F8D] hover:bg-[#4CAF50] rounded-full flex items-center justify-center transition-all transform hover:scale-110"
                       aria-label="Instagram"
                     >
                       <Instagram size={24} className="text-white" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.youtube.com/@InjuryFreeLiving"
                       className="w-12 h-12 bg-[#2B5F8D] hover:bg-[#4CAF50] rounded-full flex items-center justify-center transition-all transform hover:scale-110"
                       aria-label="YouTube"
                     >
